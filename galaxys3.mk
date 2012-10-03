@@ -79,8 +79,8 @@ PRODUCT_TAGS += dalvik.gc.type-precise
 PRODUCT_LOCALES := hdpi
 
 # kernel modules for ramdisk
-RAMDISK_MODULES = $(addprefix device/samsung/galaxys3/,bthid.ko dhd.ko gspca_main.ko j4fs.ko \
-	scsi_wait_scan.ko Si4709_driver.ko vibrator.ko)
+RAMDISK_MODULES = $(addprefix device/samsung/galaxys3/,btlock.ko dhd.ko extfat_core.ko extfat_fs.ko \
+	scsi_wait_scan.ko Si4709_driver.ko)
 PRODUCT_COPY_FILES += $(foreach module,\
 	$(RAMDISK_MODULES),\
 	$(module):root/lib/modules/$(notdir $(module)))
@@ -91,8 +91,8 @@ PRODUCT_COPY_FILES += $(foreach module,\
 	$(module):system/lib/modules/$(notdir $(module)))
 
 # kernel modules for recovery ramdisk
-PRODUCT_COPY_FILES += \
-    device/samsung/galaxys3/j4fs.ko:recovery/root/lib/modules/j4fs.ko
+# PRODUCT_COPY_FILES += \
+#    device/samsung/galaxys3/j4fs.ko:recovery/root/lib/modules/j4fs.ko
 
 ifeq ($(TARGET_PREBUILT_KERNEL),)
     LOCAL_KERNEL := device/samsung/galaxys3/kernel
