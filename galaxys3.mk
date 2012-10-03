@@ -79,7 +79,7 @@ PRODUCT_TAGS += dalvik.gc.type-precise
 PRODUCT_LOCALES := hdpi
 
 # kernel modules for ramdisk
-RAMDISK_MODULES = $(addprefix device/samsung/galaxys3/,btlock.ko dhd.ko extfat_core.ko extfat_fs.ko \
+RAMDISK_MODULES = $(addprefix device/samsung/galaxys3/,btlock.ko dhd.ko exfat_core.ko exfat_fs.ko \
 	scsi_wait_scan.ko Si4709_driver.ko)
 PRODUCT_COPY_FILES += $(foreach module,\
 	$(RAMDISK_MODULES),\
